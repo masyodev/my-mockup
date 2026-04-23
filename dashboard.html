@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - My IPSI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/pages/dashboard.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo/ipsi.png" alt="logo">
+                <div>
+                    <h3>My IPSI</h3>
+                    <small>Pengda Panel</small>
+                </div>
+            </div>
+
+            <div id="overlay" class="overlay" onclick="toggleSidebar(false)"></div>
+
+            <ul id="menuContainer" class="menu-list">
+
+                <li class="menu-item active">
+                    <i class="fa-solid fa-house"></i> 
+					<span>Dashboard</span>
+                </li>
+
+                <li class="menu-parent">
+                    <div class="menu-title">
+                        <i class="fa-solid fa-sitemap"></i> 
+						<span>Organisasi IPSI</span>
+                    </div>
+                    <ul class="submenu">
+                        <li class="menu-item">
+							<span>Struktur Organisasi</span>
+						</li>
+                        <li class="menu-item">
+							<span>Personel IPSI</span>
+						</li>
+                    </ul>
+                </li>
+
+                <li class="menu-parent">
+                    <div class="menu-title">
+                        <i class="fa-solid fa-database"></i> 
+						<span>Data</span>
+                    </div>
+                    <ul class="submenu">
+                        <li class="menu-item">
+							<span>Perguruan</span>
+						</li>
+                        <li class="menu-item">
+							<span>Warga</span>
+						</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <i class="fa-solid fa-file"></i> 
+					<span>Laporan</span>
+                </li>
+
+                <li class="menu-parent">
+                    <div class="menu-title">
+                        <i class="fa-solid fa-gear"></i> 
+						<span>Master Data</span>
+                    </div>
+                    <ul class="submenu">
+                        <li class="menu-item">
+							<span>Master Wilayah</span>
+						</li>
+                        <li class="menu-item">
+							<span>Master Role</span>
+						</li>
+                        <li class="menu-item">
+							<span>Master Jabatan</span>
+						</li>
+                        <li class="menu-item">
+							<span>Master Level</span>
+						</li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <!-- LEFT -->
+                <div class="topbar-left">
+                    <button class="btn-menu" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="page-info">
+                        <h2 id="pageTitle">Dashboard</h2>
+                        <small class="breadcrumb">Home / Dashboard</small>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="topbar-right">
+
+                    <!-- SEARCH -->
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+
+                    <!-- NOTIFICATION -->
+                    <div class="icon-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge-dot"></span>
+                    </div>
+
+                    <!-- USER -->
+                    <div class="user-dropdown" onclick="toggleUserMenu()">
+                        <div class="avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="user-text">
+                            <span class="user-name">Admin</span>
+                            <small>Admin Pusat</small>
+                        </div>
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                        <!-- DROPDOWN -->
+                        <div id="userMenu" class="dropdown-menu">
+                            <div class="dropdown-item">Profile</div>
+                            <div class="dropdown-item">Settings</div>
+                            <div class="dropdown-item" onclick="logout()">Logout</div>
+                        </div>
+                    </div>
+
+                    <!-- LOGOUT BUTTON -->
+                    <button class="btn-logout" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+						logout
+                    </button>
+
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <main class="content" id="contentArea">
+                <!-- akan diisi oleh JS -->
+            </main>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/modules/dashboard/dashboard.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
