@@ -1,3 +1,6 @@
+#ipsi_container {
+  display: none;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -503,12 +506,49 @@ body {
     gap: 10px;
 }
 
-.btn-secondary {
-    background: #e5e7eb;
+.btn {
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+}
+
+.btn-add {
+    background: linear-gradient(90deg, #f97316, #ea580c);
+    color: #fff;
+}
+
+.btn-add:hover {
+    background: linear-gradient(90deg, #ea580c, #c2410c);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+	font-size: 14px;	
 }
 
 .page-header {
@@ -707,4 +747,173 @@ body {
     .chart-row {
         grid-template-columns: 1fr;
     }
+}
+
+/* ===== TABLE PERGURUAN ===== */
+#perguruan_table td {
+    padding: 10px 8px;
+    vertical-align: middle;
+}
+
+#perguruan_table td:last-child {
+    width: 110px;
+    text-align: right;
+}
+
+/* ===== ROW STYLE ===== */
+.pg-row {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* ===== SELECT & INPUT ===== */
+.pg_nama,
+.pg_jabatan {
+    width: 100% !important;
+    height: 36px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 13px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/* FOCUS EFFECT */
+.pg_nama:focus,
+.pg_jabatan:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.1);
+    outline: none;
+}
+
+/* ===== BUTTON SMALL ===== */
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+/* ===== BUTTON HAPUS BIAR LEBIH SOFT ===== */
+.btn-secondary.btn-sm {
+    background: #d2c3c0;
+    color: #475569;
+    border: none;
+}
+
+.btn-secondary.btn-sm:hover {
+    background: #e2e8f0;
+}
+
+/* ===== TOMBOL TAMBAH ===== */
+#perguruan_table + .btn-primary {
+    margin-top: 10px;
+}
+
+#perguruan_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.pg-row {
+    background: #f9fafb;
+}
+
+.pg-row td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* kiri & kanan rounded */
+.pg-row td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+.pg-row td:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+	margin: 0;
+    font-size: 16px;	
+}
+
+/* ===== INPUT TABLE (IPSI & PERGURUAN) ===== */
+.table input,
+.table select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* focus biar enak */
+.table input:focus,
+.table select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+}
+
+/* ===== BUTTON BAWAH TABLE ===== */
+.table-action {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.table {
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 8px;
+}
+
+
+/* ===== PERSON TABLE ===== */
+.person-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ===== TAG STYLE ===== */
+.tag {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* IPSI */
+.tag.ipsi {
+  border-left: 4px solid #3b82f6;
+}
+
+/* PERGURUAN */
+.tag.pg {
+  border-left: 4px solid #f97316;
+}
+
+.table tr:hover {
+  background: #f9fafb;
+}
+
+.table td {
+  vertical-align: top;
 }
