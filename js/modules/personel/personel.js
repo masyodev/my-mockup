@@ -15,10 +15,17 @@ function renderPersonel() {
   return `
     <div class="page-header">
       <h2>Personel IPSI</h2>
-      <button class="btn btn-add" onclick="showFormPersonel()">
-		   <i class="fa-solid fa-plus"></i>
-		   Tambah
-	   </button>
+		<div class="header-action">
+		   <button class="btn btn-add btn-sm" onclick="showFormPersonel()">
+			  <i class="fa-solid fa-plus"></i> Tambah
+			</button>		
+			<button class="btn btn-primary btn-sm" onclick="savePersonel()">
+			  <i class="fa-solid fa-floppy-disk"></i> Simpan
+			</button>
+			<button class="btn btn-secondary btn-sm" onclick="resetPersonel()">
+			  <i class="fa-solid fa-rotate-left"></i> Reset
+			</button>
+		</div>	
     </div>
 
     <!-- ================= DATA PRIBADI ================= -->
@@ -116,17 +123,7 @@ function renderPersonel() {
 		</button>
 	</div>
 
-    <!-- ================= ACTION ================= -->
-    <div class="form-action">
-      <button class="btn btn-primary btn-sm" onclick="savePersonel()">
-		  <i class="fa-solid fa-floppy-disk"></i>
-		  Simpan
-	  </button>
-      <button class="btn btn-secondary btn-sm" onclick="resetPersonel()">
-		<i class="fa-solid fa-rotate-left"></i>
-		Reset
-	   </button>
-    </div>
+
 
     <!-- ================= TABLE ================= -->
     <div class="card">
@@ -275,6 +272,8 @@ rows.forEach(r => {
 
   renderPersonelTable();
   resetPersonel();
+  hideIPSITable();
+  hidePerguruanTable();
 }
 
 
@@ -327,13 +326,24 @@ function resetPersonel() {
   document.getElementById("ipsi_table").innerHTML = "";
   document.getElementById("perguruan_table").innerHTML = "";
 
+ // 🔹 HIDE IPSI
+  const ipsiContainer = document.getElementById("ipsi_container");
+  if (ipsiContainer) ipsiContainer.style.display = "none";
+
+  // 🔹 HIDE PERGURUAN (kalau ada container)
+  const pgContainer = document.getElementById("perguruan_container");
+  if (pgContainer) pgContainer.style.display = "none";
+
+
   IPSI_LOCKED = false;
   IPSI_DATA_LOCKED = [];
 
   PG_LOCKED = false;
   PG_DATA_LOCKED = [];
 
-  addIPSIRow();
+  //addIPSIRow();
+  
+  
 }
 
 function showFormPersonel() {
@@ -345,6 +355,8 @@ function showFormPersonel() {
   form.scrollIntoView({
     behavior: "smooth"
   });
+  hideIPSITable();
+  hidePerguruanTable();
 }
 
 function refreshPerguruanDropdown() {
@@ -485,6 +497,9 @@ function refreshPerguruanDropdown() {
 
 function addIPSIRow() {
 
+//  const nama = document.getElementById("p_nama").value.trim();
+//  if (!nama) return alert("Lengkapi Data Pribadi");
+  
   // 🔥 TAMPILKAN TABLE SAAT ADA ROW
   const container = document.getElementById("ipsi_container");
   if (container) container.style.display = "block";
@@ -622,4 +637,14 @@ function removeIPSIRow(btn) {
     const container = document.getElementById("ipsi_container");
     if (container) container.style.display = "none";
   }
+}
+
+function hideIPSITable() {
+  const tbody = document.getElementById("ipsi_table");
+  if (tbody) tbody.innerHTML = ""; // 🔥 kosongkan row
+}
+
+function hidePerguruanTable() {
+  const tbody = document.getElementById("perguruan_table");
+  if (tbody) tbody.innerHTML = ""; // 🔥 sudah sama behaviournya
 }

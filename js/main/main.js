@@ -24,10 +24,12 @@ if (searchClose && searchBar) {
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
 
-navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-});
-
+if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+    });
+ 
+}
 
 // ========================
 // DROPDOWN MOBILE (FIX HALUS)
@@ -82,3 +84,51 @@ function setHeaderHeight() {
 setHeaderHeight();
 window.addEventListener('resize', setHeaderHeight);
 
+
+
+// TAB SWITCH
+document.querySelectorAll('[data-tab]').forEach(tab => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // remove active menu
+		document.querySelectorAll('[data-tab]').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        // hide all content
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        // show selected
+        const target = this.getAttribute('data-tab');
+		const targetEl = document.getElementById(target);
+
+		if (targetEl) {
+			targetEl.classList.add('active');
+		}
+    });
+
+});
+
+
+// FILTER KELAS
+document.querySelectorAll('.kelas-menu a').forEach(btn => {
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // active menu
+        document.querySelectorAll('.kelas-menu a').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const target = this.getAttribute('data-class');
+
+        // hide semua
+        document.querySelectorAll('.kelas-content').forEach(grid => {
+            grid.classList.remove('active');
+        });
+
+        // show target
+        document.querySelector(`.kelas-content[data-class="${target}"]`)
+            .classList.add('active');
+    });
+});
