@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesilat Nasional - Putra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER (COPY DARI INDEX) -->
+<header class="main-header">
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/LogoIPSI_%281%29.png">
+		
+    </div>
+
+    <div class="header-links">
+	    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+		<span id="search-close">✕</span>
+    </div>
+        <a href="login.html" class="my-ipsi-btn">My IPSI</a>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+        </div>
+    </div>
+	
+</header>
+
+<!-- NAV (COPY DARI INDEX) -->
+<header class="header-menu">
+    <nav>
+		<ul class="menu">
+			<li><a href="#">KABAR SILAT</a></li>
+            <li class="has-dropdown">
+                <a href="#">KOMPETISI</a>
+                <ul>
+                    <li><a href="#">Jadwal Kompetisi</a></li>
+                    <li><a href="#">Hasil Kompetisi</a></li>
+                    <li><a href="#">Pendaftaran Event</a></li>
+                </ul>
+            </li>
+			<li class="has-dropdown">
+				<a href="#">PESILAT NASIONAL</a>
+				<ul>
+					<li class="has-dropdown">
+						<a href="#">Tanding</a>
+						<ul>
+							<li><a href="pesilat-putra.html">Putra</a></li>
+							<li><a href="#">Putri</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+            <li class="has-dropdown">
+                <a href="#">PERATURAN</a>
+                <ul>
+                    <li><a href="#">Aturan</a></li>
+                    <li><a href="#">Standar Teknik</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#">TENTANG IPSI</a>
+                <ul>
+                    <li><a href="#">Sejarah</a></li>
+                    <li><a href="#">Struktur</a></li>
+                </ul>
+            </li>
+		</ul>
+    </nav>
+</header>
+
+<!--HERO SECTION -->
+<section class="page-title">
+    <div class="container page-title-flex">
+
+        <h1>PESILAT PUTRA</h1>
+
+        <ul class="sub-menu-inline">
+            <li><a href="#" class="active" data-tab="profil">Profil</a></li>
+            <li><a href="#" data-tab="pemain">Pesilat</a></li>
+            <li><a href="#" data-tab="official">Official</a></li>
+            <li><a href="#" data-tab="pertandingan">Pertandingan</a></li>
+            <li><a href="#" data-tab="galeri">Galeri</a></li>
+        </ul>
+
+    </div>
+</section>
+
+<section class="tab-content active" id="profil">
+    <div class="container profil-grid">
+
+        <div class="profil-image">
+            <img src="assets/images/content/team.jpg">
+        </div>
+
+        <div class="profil-info">
+            <h2>PROFIL TIM PESILAT</h2>
+
+            <p><strong>Pelatih:</strong><br>John Herdman</p>
+            <p><strong>Asisten:</strong><br>Nova Arianto</p>
+            <p><strong>Kapten:</strong><br>Jay Idzes</p>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="tab-content" id="pemain">
+
+    <!-- FILTER KELAS -->
+    <div class="kelas-menu">
+        <div class="container">
+            <ul>
+				<li><a href="#" class="active" data-class="A">Kelas A</a></li>
+				<li><a href="#" data-class="B">Kelas B</a></li>
+				<li><a href="#" data-class="C">Kelas C</a></li>
+				<li><a href="#" data-class="D">Kelas D</a></li>				
+            </ul>
+        </div>
+    </div>
+
+    <!-- GRID -->
+<div class="container">
+
+    <!-- KELAS A -->
+    <div class="pemain-grid kelas-content active" data-class="A">
+		<div class="pemain-card">
+			<img src="assets/images/atlet/m-zaki.jpg">
+			<div class="overlay">
+			  <div class="info">
+				<div class="kelas">A</div>
+				<div class="divider"></div>
+				<div class="nama">
+					<span class="first">M.ZAKI</span>
+					<span class="last">ZIKRILAH</span>					
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="pemain-card">
+			<img src="assets/images/atlet/tito-hendra.jpg">
+			<div class="overlay">
+			  <div class="info">			
+				<div class="kelas">A</div>
+				<div class="divider"></div>
+				<div class="nama">
+					<span class="first">TITO</span>
+					<span class="last">HENDRA</span>					
+				</div>
+			 </div>
+			</div>
+		</div>
+    </div>
+
+    <!-- KELAS B -->
+    <div class="pemain-grid kelas-content" data-class="B">
+        <div class="pemain-card">
+			<img src="assets/images/atlet/iqbal-chandra.jpg">
+			<div class="overlay">	
+			  <div class="info">						
+				<div class="kelas">B</div>
+				<div class="divider"></div>
+				<div class="nama">
+					<span class="first">IQBAL</span>
+					<span class="last">CHANDRA</span>					
+				</div>
+				</div>				
+			</div>
+	    </div>
+    </div>
+			
+    <!-- KELAS C -->
+    <div class="pemain-grid kelas-content" data-class="C">
+        <div class="pemain-card">
+			<img src="assets/images/atlet/tito-hendra.jpg">
+			<div class="overlay">	
+			  <div class="info">									
+				<div class="kelas">C</div>
+				<div class="divider"></div>				
+				<div class="nama">
+					<span class="first">TITO</span>				
+					<span class="last">HENDRA</span>
+				</div>
+			</div>
+			</div>
+		</div>
+        <div class="pemain-card">
+			<img src="assets/images/atlet/hanifan.jpg">
+			<div class="overlay">
+			  <div class="info">									
+				<div class="kelas">C</div>
+				<div class="divider"></div>				
+				<div class="nama">
+					<span class="first">HANIFAN</span>
+					<span class="last">YUDANI</span>					
+				</div>
+				</div>
+			</div>
+		</div>		
+    </div>
+
+    <!-- KELAS D -->
+    <div class="pemain-grid kelas-content" data-class="D">
+        <div class="pemain-card">
+			<img src="assets/images/atlet/furgon-habil winata.jpg">
+			<div class="overlay">			
+			  <div class="info">									
+				<div class="kelas">D</div>
+				<div class="nama">
+					<span class="first">FURGON HABIL</span>
+					<span class="last">HABIL</span>					
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+</section>
+
+<script src="js/main/main.js"></script>
+</body>
+</html>
