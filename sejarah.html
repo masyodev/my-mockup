@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sejarah IPSI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="css/pages/sejarah.css">
+    <link rel="stylesheet" href="css/base/style.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+</head>
+<body>
+
+<!-- HEADER (COPY DARI INDEX) -->
+<header class="main-header">
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/LogoIPSI_%281%29.png">
+		
+    </div>
+
+    <div class="header-links">
+	    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+		<span id="search-close">✕</span>
+    </div>
+        <a href="login.html" class="my-ipsi-btn">My IPSI</a>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+        </div>
+    </div>
+	
+</header>
+
+<!-- NAV (COPY DARI INDEX) -->
+<header class="header-menu">
+    <nav>
+		<ul class="menu">
+			<li><a href="#">KABAR SILAT</a></li>
+            <li class="has-dropdown">
+                <a href="#">KOMPETISI</a>
+                <ul>
+                    <li><a href="#">Jadwal Kompetisi</a></li>
+                    <li><a href="#">Hasil Kompetisi</a></li>
+                    <li><a href="#">Pendaftaran Event</a></li>
+                </ul>
+            </li>
+			<li class="has-dropdown">
+				<a href="#">PESILAT NASIONAL</a>
+				<ul>
+					<li class="has-dropdown">
+						<a href="#">Tanding</a>
+						<ul>
+							<li><a href="pesilat-putra.html">Putra</a></li>
+							<li><a href="#">Putri</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+            <li class="has-dropdown">
+                <a href="#">PERATURAN</a>
+                <ul>
+                    <li><a href="#">Aturan</a></li>
+                    <li><a href="#">Standar Teknik</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#">TENTANG IPSI</a>
+                <ul>
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="#">Struktur</a></li>
+                </ul>
+            </li>
+		</ul>
+    </nav>
+</header>
+
+<!--HERO SECTION -->
+<section class="page-title">
+    <div class="container page-title-sejarah">
+        <h1>SEJARAH IPSI</h1>
+    </div>
+</section>
+
+
+<div class="timeline-wrapper">
+
+  <button class="nav-btn left" id="prevBtn">&#10094;</button>
+
+  <div class="timeline-container" id="timeline">
+
+    <div class="timeline-slide active">
+      <div class="watermark">1948</div>
+      <div class="content">
+        <div class="line"></div>
+        <span class="year">1948</span>
+        <h1>BERDIRINYA IPSI</h1>
+        <p>IPSI berdiri 18 Mei 1948 di Surakarta sebagai wadah persatuan pencak silat.</p>
+      </div>
+    </div>
+
+    <div class="timeline-slide">
+      <div class="watermark">1950</div>
+      <div class="content">
+        <div class="line"></div>
+        <span class="year">1950</span>
+        <h1>PENGEMBANGAN NASIONAL</h1>
+        <p>Mulai terbentuk jaringan organisasi di seluruh Indonesia.</p>
+      </div>
+    </div>
+
+    <div class="timeline-slide">
+      <div class="watermark">1980</div>
+      <div class="content">
+        <div class="line"></div>
+        <span class="year">1980</span>
+        <h1>INTERNASIONAL</h1>
+        <p>Pencak silat mulai dikenal dunia melalui kejuaraan internasional.</p>
+      </div>
+    </div>
+
+    <div class="timeline-slide">
+      <div class="watermark">2019</div>
+      <div class="content">
+        <div class="line"></div>
+        <span class="year">2019</span>
+        <h1>UNESCO</h1>
+        <p>Pencak silat diakui sebagai Warisan Budaya Tak Benda Dunia.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="nav-btn right" id="nextBtn">&#10095;</button>
+
+  <div class="dots" id="dots"></div>
+
+</div>
+
+<script src="js/modules/sejarah/sejarah.js"></script>
+</body>
+</html>
