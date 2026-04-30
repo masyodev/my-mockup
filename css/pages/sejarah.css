@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f6f6f6;
+}
+
+.timeline-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 40px;
+}
+
+.timeline-container {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.timeline-slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: all 0.6s ease;
+}
+
+.timeline-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.content {
+  z-index: 2;
+  max-width: 600px;
+  padding-left: 60px;
+  padding-right: 120px;
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.line {
+  width: 120px;
+  height: 2px;
+  background: #ccc;
+  margin-bottom: 15px;
+}
+
+.year {
+  color: #2e8b57;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 52px;
+  margin: 10px 0;
+  color: #666;
+}
+
+p {
+  color: #777;
+  font-size: 16px;
+}
+
+.watermark {
+  position: absolute;
+  right: 10%;
+  font-size: 200px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.05);
+  z-index: 1;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 3;
+}
+
+.left { left: 0; }
+.right { right: 60px; }
+
+.dots {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: red;
+  transform: scale(1.4);
+}
+
+.page-title-sejarah {
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+}
+
+.page-title-sejarah h1 {
+    margin: 0;
+    flex: none;
+    white-space: nowrap;  
+	padding-right: 1200px;
+	  color: #fff;	
+}
+
+.sejarah-hero h1 {
+  color: #fff;
+}

@@ -1156,7 +1156,8 @@ body {
     padding: 10px 0 10px;
 	position: relative;
     overflow: hidden;
-	min-height: 60px; 
+	/*min-height: 60px; */
+	height: 80px;
 }
 
 .page-title h1 {
@@ -1246,23 +1247,24 @@ body {
 .page-title-flex {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+	justify-content: space-between;
+	  color: #fff;
 }
 
 .page-title-flex h1 {
     margin: 0;
-    flex: 0;     
-    white-space: nowrap;   /* 🔥 kunci supaya tidak turun */	
+    flex: none;
+    white-space: nowrap;  
+	padding-right: 600px;		
 }
 
 .sub-menu-inline {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
+	padding: 0;		
     margin: 0;
-    padding: 0;
-	white-space: nowrap; 
-	  margin-left: 400px;
+	white-space: nowrap; 	
 }
 
 .sub-menu-inline a {
