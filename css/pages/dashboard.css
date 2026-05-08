@@ -170,6 +170,7 @@ body {
     border-radius: 8px;
     display: none;
     min-width: 150px;
+	z-index: 9999;
 }
 
 .dropdown-item {
@@ -251,7 +252,7 @@ body {
     position: relative;
     padding: 14px 20px;
     border-radius: 16px;
-    overflow: hidden;
+    overflow: visible;
     background: linear-gradient(135deg, #dbeafe, #c7d2fe);
     display: block;
     margin-bottom: 16px;	
@@ -447,6 +448,24 @@ body {
     .main {
         margin-left: 0 !important;
     }
+	
+	.card canvas {
+        height: 180px !important;
+    }
+	
+    .donut-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donut-chart {
+        width: 140px;
+        height: 140px;
+    }
+
+    .donut-legend {
+        width: 100%;
+    }	
 }
 
 /* ===== ACTIVE STATE IMPROVEMENT ===== */
@@ -612,11 +631,27 @@ body {
     margin-top: 20px;
 }
 
+.chart-row .card {
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .card canvas {
     width: 100% !important;
     height: 220px !important;
 }
-
+ 
+.chart-body {
+    height: 240px;   
+    position: relative;
+}
+ 
+.chart-body canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
 
 .stat-top {
     display: flex;
@@ -666,13 +701,14 @@ body {
 .donut-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    flex: 1;
 }
 
 .donut-chart {
-    width: 180px;
-    height: 180px;
-    position: relative;
+    width: 50%;
+    height: 220px;
+ 
 }
 
 .donut-chart canvas {
@@ -738,7 +774,7 @@ body {
 
 .chart-row {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
 }
@@ -921,4 +957,96 @@ body {
 
 .table td {
   vertical-align: top;
+}
+
+
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;           
+  margin-top: 20px;
+}
+/* khusus utk card bawah (perguruan dan anggota baru) 
+/*
+.table-row .table th:nth-child(1),
+.table-row .table td:nth-child(1) {
+    width: 35%;
+}
+
+.table-row .table th:nth-child(2),
+.table-row .table td:nth-child(2) {
+    width: 25%;
+}
+
+.table-row .table th:nth-child(3),
+.table-row .table td:nth-child(3) {
+    width: 20%;
+}
+
+.table-row .table th:nth-child(4),
+.table-row .table td:nth-child(4) {
+    width: 20%;
+}
+
+/* rapihin spacing biar seperti mockup */
+.table-row .table td {
+    padding: 12px 10px;
+}
+
+/* header lebih ringan */
+.table-row .table th {
+    background: transparent;
+    color: #6b7280;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-header a {
+    font-size: 13px;
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.badge.success {
+    background: #e6f7ec;
+    color: #16a34a;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.pg-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pg-info img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    padding: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pg-info span {
+    font-weight: 500;
 }

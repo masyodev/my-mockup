@@ -92,10 +92,10 @@ function loadPage(page) {
 
         case "Dashboard":
             content.innerHTML = renderDashboard();
-			setTimeout(() => {
-				initCharts();
-			}, 0);	
-			
+            setTimeout(() => {
+                initCharts();
+            }, 0);
+
             break;
 
         case "Struktur Organisasi":
@@ -110,13 +110,13 @@ function loadPage(page) {
 
             break;
 
-		case "Personel IPSI":
-			content.innerHTML = renderPersonel();
+        case "Personel IPSI":
+            content.innerHTML = renderPersonel();
 
-			setTimeout(() => {
-				initPersonel();
-			}, 0);
-			break;
+            setTimeout(() => {
+                initPersonel();
+            }, 0);
+            break;
 
         case "Perguruan":
             content.innerHTML = `<div class="card"><h3>Data Perguruan</h3></div>`;
@@ -240,44 +240,146 @@ function renderDashboard() {
 </div>
 	
     <!--CHART -->
-	<div class="chart-row">
+ <div class="chart-row">
+
+    <!-- LINE CHART (SATU CARD UTUH) -->
     <div class="card">
-	<div class="chart-header">
-		<h3>Statistik Warga</h3>
+        <div class="chart-header">
+            <h3>Statistik Warga</h3>
+            <div class="chart-filter">
+                <select id="filterBulan">
+                    <option value="all">Semua Bulan</option>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">Mei</option>
+                    <option value="6">Jun</option>
+                </select>
+                <select id="filterTahun">
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+        </div>
 
-		<div class="chart-filter">
-			<select id="filterBulan">
-				<option value="all">Semua Bulan</option>
-				<option value="1">Jan</option>
-				<option value="2">Feb</option>
-				<option value="3">Mar</option>
-				<option value="4">Apr</option>
-				<option value="5">Mei</option>
-				<option value="6">Jun</option>
-			</select>
-
-			<select id="filterTahun">
-				<option value="2025">2025</option>
-				<option value="2024">2024</option>
-			</select>
-		</div>
-	</div>
-
-
-
-      <canvas id="chartLine"></canvas>
+        <div class="chart-body">
+            <canvas id="chartLine"></canvas>
+        </div>
     </div>
 
+    <!-- DONUT -->
     <div class="card">
-      <h3>Sebaran Perguruan per Provinsi</h3>
-		<div class="donut-container">
-			<div class="donut-chart">
-				<canvas id="chartDonut"></canvas>
-			</div>
-			<div class="donut-legend" id="donutLegend"></div>
-		</div
+        <h3>Sebaran Perguruan per Provinsi</h3>
+        <div class="donut-container">
+            <div class="donut-chart">
+                <canvas id="chartDonut"></canvas>
+            </div>
+            <div class="donut-legend" id="donutLegend"></div>
+        </div>
     </div>
-  </div>
+
+</div>
+  
+<!--CARD PERGURUAN -->
+<div class="table-row">
+
+    <!-- PERGURUAN TERBARU -->
+    <div class="card">
+        <div class="card-header">
+            <h3>Perguruan Terbaru</h3>
+            <a href="#">Lihat Semua</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nama Perguruan</th>
+                    <th>Pengda</th>
+                    <th>Tanggal</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+					<td>
+					  <div class="pg-info">
+						<img src="assets/images/logo/psht.jpg" alt="PSHT">
+						<span>PSHT Ranting Cilandak</span>
+					  </div>
+					</td> 
+					<td>Jakarta Selatan</td>
+                    <td>21 Mei 2025</td>
+                    <td><span class="badge success">Aktif</span></td>
+                </tr>
+                <tr>
+					<td>
+					  <div class="pg-info">
+						<img src="assets/images/logo/tapak-suci.jpg" alt="PSHT">
+						<span>Tapak Suci Depok</span>
+					  </div>
+					</td> 
+                    <td>Kota Depok</td>
+                    <td>20 Mei 2025</td>
+                    <td><span class="badge success">Aktif</span></td>
+                </tr>
+                <tr>
+					<td>
+					  <div class="pg-info">
+						<img src="assets/images/logo/merpati-putih.jpg" alt="PSHT">
+						<span>Merpati Putih Kab.Bekasi</span>
+					  </div>
+					</td>  
+                    <td>Kab.Bekasi</td>
+                    <td>19 Mei 2025</td>
+                    <td><span class="badge success">Aktif</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ANGGOTA BARU -->
+    <div class="card">
+        <div class="card-header">
+            <h3>Anggota Baru</h3>
+            <a href="#">Lihat Semua</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Perguruan</th>
+                    <th>Pengda</th>
+                    <th>Tanggal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ahmad Rizki</td>
+                    <td>PSHT Cilandak</td>
+                    <td>Jakarta Selatan</td>
+                    <td>22 Mei 2025</td>
+                </tr>
+                <tr>
+                    <td>Siti Nurhaliza</td>
+                    <td>Tapak Suci Depok</td>
+                    <td>Kota Depok</td>
+                    <td>22 Mei 2025</td>
+                </tr>
+                <tr>
+                    <td>Budi Santoso</td>
+                    <td>PSP Bekasi</td>
+                    <td>Kab. Bekasi</td>
+                    <td>21 Mei 2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!--END CARD PERGURUAN --> 
   `;
 }
 
@@ -361,7 +463,7 @@ function initCharts() {
                 labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
                 datasets: [{
                     label: "Warga",
-					data: chartData["2025"], // default awal
+                    data: chartData["2025"], // default awal
 
                     borderColor: "#3b82f6",
                     fill: true,
@@ -370,7 +472,10 @@ function initCharts() {
 
                     backgroundColor: function(context) {
                         const chart = context.chart;
-                        const {ctx, chartArea} = chart;
+                        const {
+                            ctx,
+                            chartArea
+                        } = chart;
 
                         if (!chartArea) return null;
 
@@ -421,14 +526,29 @@ function initCharts() {
                     borderWidth: 0
                 }]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: "65%",
-                plugins: {
-                    legend: { display: false }
-                }
-            }
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+
+			plugins: {
+				legend: {
+					display: false
+				}
+			},
+
+			layout: {
+				padding: {
+					top: 10
+				}
+			},
+
+			scales: {
+				y: {
+					beginAtZero: false,
+					grace: '5%'
+				}
+			}
+		}
         });
 
         // LEGEND
@@ -454,15 +574,15 @@ function initCharts() {
             `;
         });
     }
-	
-const filterBulan = document.getElementById("filterBulan");
-const filterTahun = document.getElementById("filterTahun");
 
-if (filterBulan && filterTahun) {
-    filterBulan.addEventListener("change", updateLineChart);
-    filterTahun.addEventListener("change", updateLineChart);
-}
-updateLineChart(); // sync awal dengan dropdown
+    const filterBulan = document.getElementById("filterBulan");
+    const filterTahun = document.getElementById("filterTahun");
+
+    if (filterBulan && filterTahun) {
+        filterBulan.addEventListener("change", updateLineChart);
+        filterTahun.addEventListener("change", updateLineChart);
+    }
+    updateLineChart(); // sync awal dengan dropdown
 }
 
 
@@ -484,4 +604,3 @@ function updateLineChart() {
     lineChart.data.datasets[0].data = data;
     lineChart.update();
 }
-
